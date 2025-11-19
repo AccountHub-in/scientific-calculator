@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+
+    <div class="w-full max-w-md mx-auto">
+        <div id="calculator" class="calculator-body rounded-3xl p-4 sm:p-6 shadow-2xl">
+            <div class="calculator-screen rounded-xl p-4 mb-4 text-right text-white break-words">
+                <div id="history" class="h-6 text-gray-400 text-sm font-light overflow-hidden"></div>
+                <div id="display" class="text-4xl sm:text-5xl font-medium h-16 overflow-x-auto overflow-y-hidden flex justify-end items-center" style="direction: ltr;">0</div>
+            </div>
+
+            <div class="grid grid-cols-5 gap-2 sm:gap-3">
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="sin">sin</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="cos">cos</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="tan">tan</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="pi">&pi;</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="e">e</button>
+                
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="^">x<sup>y</sup></button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="log">log</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="ln">ln</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="(">(</button>
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value=")">)</button>
+
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="sqrt">&radic;</button>
+                <button class="calc-btn bg-yellow-600 hover:bg-yellow-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="C">C</button>
+                <button class="calc-btn bg-yellow-600 hover:bg-yellow-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="DEL">⌫</button>
+                <button class="calc-btn bg-yellow-600 hover:bg-yellow-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="%">%</button>
+                <button class="calc-btn bg-blue-600 hover:bg-blue-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="/">÷</button>
+                
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="fact">n!</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="7">7</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="8">8</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="9">9</button>
+                <button class="calc-btn bg-blue-600 hover:bg-blue-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="*">&times;</button>
+                
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="^2">x²</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="4">4</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="5">5</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="6">6</button>
+                <button class="calc-btn bg-blue-600 hover:bg-blue-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="-">-</button>
+                
+                <button class="calc-btn bg-gray-700 hover:bg-gray-600 rounded-xl p-3 text-white text-lg" data-value="negate">+/-</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="1">1</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="2">2</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="3">3</button>
+                <button class="calc-btn bg-blue-600 hover:bg-blue-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="+">+</button>
+
+                <button class="calc-btn col-span-2 bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value="0">0</button>
+                <button class="calc-btn bg-gray-800 hover:bg-gray-700 rounded-xl p-3 text-white text-2xl font-bold" data-value=".">.</button>
+                <button class="calc-btn col-span-2 bg-green-600 hover:bg-green-500 rounded-xl p-3 text-white text-2xl font-bold" data-value="=">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
