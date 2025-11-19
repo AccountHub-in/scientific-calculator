@@ -31,11 +31,7 @@ Prerequisites
 A modern web browser (Chrome, Firefox, Edge, Safari, etc.).
 
 Installation
-
-Clone the repository:
-
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-cd your-repo-name
+Clone the repository
 
 
 Run the application:
@@ -80,3 +76,16 @@ Factorial: The calculateFactorial function ensures the input is a non-negative i
 # 🤝 Contribution
 
 Feel free to fork the repository and contribute. Suggestions for improving the calculation engine, adding new scientific functions, or optimizing the UI/UX are welcome!
+
+
+# 🤝 Contact
+
+Feel free to reach out to me!
+
+GitHub: AccountHub-in
+
+Email: s.https.mail@gmail.com
+
+Twitter/X: @realsatishaxe
+
+project link: https://accounthub-in.github.io/scientific-calculator/
